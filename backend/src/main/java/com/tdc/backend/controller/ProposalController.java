@@ -37,16 +37,6 @@ public class ProposalController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
-    @GetMapping(value="/{id}")
-	public ResponseEntity<Proposal> findById(@PathVariable Long id){
-    	try {
-    		Proposal obj = service.findProposalById(id);
-    		return ResponseEntity.ok().body(obj);
-    	}catch(Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-    	}
-	}
     
     @PostMapping("/save")
     public ResponseEntity<Proposal> save(@RequestBody Proposal proposal) {
@@ -59,27 +49,6 @@ public class ProposalController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
-	@PutMapping(value = "/{id}")
-	public ResponseEntity<Proposal> update(@PathVariable Long id, @RequestBody Proposal obj) {
-		try {
-			obj = service.updateProposal(id, obj);
-			return ResponseEntity.ok().body(obj);
-		}catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-	}
-	
-	@DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProposal(@PathVariable Long id) {
-		try {
-			service.deleteProposal(id);
-	        return ResponseEntity.noContent().build();
-		}catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }    
-    }
-	
 	
 	@ExceptionHandler
     public ResponseEntity<String> handleException(Exception e) {

@@ -19,6 +19,7 @@ export class PropostaService {
   }
 
   save(proposal: Proposta): Observable<Proposta[]> {
-    return this.http.post<Proposta[]>(this.API+"/save", Proposta);
-  }
+  return this.http.post<Proposta[]>(this.API + "/save", proposal);  
+}
+
 }
