@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 
-
-
-
 @Component({
   selector: 'app-principal',
   standalone: true,
@@ -13,23 +10,15 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } 
   styleUrl: './principal.component.scss'
 })
 export class PrincipalComponent {
-  formulario: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    
-    this.formulario = this.fb.group({
-      titulo: ['', Validators.required],
-      resumo: ['', Validators.required],
-      nome: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
-    });
-  }
+  titulo: string = '';
+  resumo: string = '';
+  nomeAutor: string = '';
+  email: string = '';
 
   onSubmit() {
-    if (this.formulario.valid) {
-      console.log('Formulário enviado:', this.formulario.value);
-    } else {
-      console.log('Formulário inválido');
+    if (!this.titulo || !this.resumo || !this.nomeAutor || !this.email) {
+      alert("Dado incorreto ou campo vazio!");
     }
   }
 }
