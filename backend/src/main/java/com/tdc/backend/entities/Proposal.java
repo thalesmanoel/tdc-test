@@ -18,6 +18,8 @@ public class Proposal {
     
     @Column(unique = true, nullable = false)
     private String email;
+    
+    public Proposal() {}
 
 	public Proposal(Long id, String title, String summary, String authorName, String email) {
 		this.id = id;

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { RouterModule} from '@angular/router';
+import { PropostaService } from './../../services/proposta.service';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { Proposta } from '../../models/proposta';
 
 @Component({
   selector: 'app-principal',
@@ -11,15 +13,26 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } 
 })
 export class PrincipalComponent {
 
-  titulo: string = '';
-  resumo: string = '';
-  nomeAutor: string = '';
-  email: string = '';
+  proposta: Proposta = new Proposta();
+  propostaService = inject(PropostaService);
+  router = inject(Router);
+  route = inject(ActivatedRoute);
 
-  onSubmit() {
-    if (!this.titulo || !this.resumo || !this.nomeAutor || !this.email) {
-      alert("Dado incorreto ou campo vazio!");
+  submit() {
+    if (!this.proposta.titulo || !this.proposta.resumo || !this.proposta.nomeAutor || !this.proposta.email) {
+      alert("Preencha todos os campos corretamente!");
+      return;
     }
+
+    this.propostaService.save(this.proposta).subscribe({
+      next: (resposta) => {
+        alert("Proposta enviada com sucesso!");
+        this.proposta = new Proposta(); // Resetando os campos
+      },
+      error: (error) => {
+        alert("Erro ao enviar proposta: " + error.message);
+      }
+    });
   }
 }
 

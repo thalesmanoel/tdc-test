@@ -44,7 +44,7 @@ public class ProposalController {
     		Proposal obj = service.findProposalById(id);
     		return ResponseEntity.ok().body(obj);
     	}catch(Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     	}
 	}
     
@@ -66,7 +66,7 @@ public class ProposalController {
 			obj = service.updateProposal(id, obj);
 			return ResponseEntity.ok().body(obj);
 		}catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
 	}
 	
