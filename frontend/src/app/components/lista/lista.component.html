@@ -1,1 +1,22 @@
-<p>lista works!</p>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>TÍTULO</th>
+        <th>RESUMO</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (proposta of lista; track $index) {
+      <tr>
+        <td>{{proposta.title}}</td>
+        <td>{{proposta.summary}}</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+
+  <button [routerLink]="['/principal']" routerLinkActive="router-link-active" >Adicionar proposta</button>
+</div>
+

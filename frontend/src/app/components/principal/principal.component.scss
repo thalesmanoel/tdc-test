@@ -21,7 +21,6 @@ input {
   border: 1px solid #ccc;
 }
 
-
 button {
   padding: 10px;
   background-color: #007bff;
@@ -29,9 +28,38 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: auto;
+  transition: 0.5s;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 20px;
+  max-height: 200px;
+}
+
+.submit, .lista{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista{
+  padding-top: 10px;
+}
+
+.btn-lista{
+  background-color: white;
+  color: #0056b3;
+  border: solid 1px #0056b3;
+}
+
+.btn-lista:hover{
+  color: white;
 }

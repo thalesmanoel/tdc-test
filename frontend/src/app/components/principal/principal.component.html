@@ -1,30 +1,37 @@
 <div class="container">
-  <form>
+  <form [formGroup]="form">
     <div>
       <label for="titulo">Título:</label>
-      <input type="text" name="titulo" [(ngModel)]="proposta.titulo">
+      <input type="text" formControlName="title">
     </div>
     <br>
 
     <div>
       <label for="resumo">Resumo:</label>
-      <input type="text" name="resumo" [(ngModel)]="proposta.resumo">
+      <textarea formControlName="summary" rows="4"></textarea>
     </div>
     <br>
 
     <div>
       <label for="nome">Nome do autor:</label>
-      <input type="text" name="nomeAutor" [(ngModel)]="proposta.nomeAutor">
+      <input type="text" formControlName="authorName">
     </div>
     <br>
 
     <div>
       <label for="email">E-mail:</label>
-      <input type="email" name="email" [(ngModel)]="proposta.email">
+      <input type="email" formControlName="email">
     </div>
     <br>
 
-    <button type="submit" (click)="submit()">Enviar</button>
+    <div class="submit">
+      <button type="submit" (click)="submit()">Enviar</button>
+    </div>
   </form>
-</div>
 
+  <div class="lista">
+    <button [routerLink]="['/lista']" routerLinkActive="router-link-active" class="btn-lista">
+      Vizualizar lista de propostas
+    </button>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 export class Proposta {
   id!: number;
-  titulo!: string;
-  resumo!: string;
-  nomeAutor!: string;
+  title!: string;
+  summary!: string;
+  authorName!: string;
   email!: string;
 }
