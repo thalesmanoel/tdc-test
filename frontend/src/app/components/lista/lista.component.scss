@@ -14,8 +14,10 @@ table {
 }
 
 thead {
-  background-color:rgb(0, 102, 255);
-  color: white;
+  background-color: var(--secundary-color);
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+
 }
 
 th, td {
@@ -25,7 +27,7 @@ th, td {
 }
 
 tbody tr {
-  background-color: #f4f8fb;
+  background-color: var(--table-color);
 }
 
 th {
@@ -33,7 +35,7 @@ th {
 }
 
 td {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
   word-wrap: break-word;
   white-space: normal;
 }
@@ -42,15 +44,15 @@ button{
   border: none;
   border-radius: 5px;
   padding: 10px;
-  background-color: rgb(0, 102, 255);
-  color: white;
+  background-color: var(--secundary-color);
+  color: var(--primary-color);
   font-weight: bold;
   transition: 0.4s;
 }
 
 button:hover{
   cursor: pointer;
-  background-color: rgb(0, 0, 178);
+  background-color: var(--hover-color);
 }
 
 

@@ -1,3 +1,12 @@
+:root{
+  --primary-color: #ffffff;
+  --secundary-color: #007bff;
+  --hover-color: #0056b3;
+  --title-color: #333;
+  --border-color: #ccc;
+  --table-color: #f4f8fb;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -6,6 +15,6 @@ body, html {
   justify-content: center;
   align-items: center;
   background-color: #c6c6c6;
-  
+
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
