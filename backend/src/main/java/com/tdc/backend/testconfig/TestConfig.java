@@ -20,9 +20,7 @@ public class TestConfig implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		Proposal p1 = new Proposal(null, "Apresetação", "Tecnologia", "Thales", "thalescarrion@gmail");
-		Proposal p2 = new Proposal(null, "Apresetação", "Tecnologia", "Manoel", "manoel@gmail");
+		/*Classe criada para realizar testes com os endpoints do backend*/
 
-		repository.saveAll(Arrays.asList(p1, p2));
 	}
 }

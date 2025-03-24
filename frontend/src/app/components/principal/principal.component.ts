@@ -2,12 +2,13 @@ import { PropostaService } from './../../services/proposta.service';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-principal',
   standalone: true,
-  imports: [RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './principal.component.html',
   styleUrl: './principal.component.scss'
 })
@@ -31,12 +32,8 @@ export class PrincipalComponent {
 
   submit() {
     if (this.form.invalid) {
-      if (this.form.get('email')?.invalid) {
-        alert("Por favor, insira um e-mail válido!");
-      } else {
         alert("Preencha todos os campos corretamente!");
-      }
-      return;
+        return;
     }
 
     this.propostaService.save(this.form.value).subscribe({

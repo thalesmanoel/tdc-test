@@ -2,7 +2,7 @@
 
   <h1>Call of Papers</h1>
 
-  <form [formGroup]="form">
+  <form [formGroup] = "form">
     <div>
       <label for="titulo">Título:</label>
       <input type="text" formControlName="title">
@@ -24,6 +24,15 @@
     <div>
       <label for="email">E-mail:</label>
       <input type="email" formControlName="email">
+
+      <div *ngIf = "form.get('email')?.invalid && form.get('email')?.touched">
+        <small *ngIf = "form.get('email')?.hasError('required')">
+          O e-mail é obrigatório.
+        </small>
+        <small *ngIf = "form.get('email')?.hasError('email')">
+          Por favor, insira um e-mail válido.
+        </small>
+      </div>
     </div>
     <br>
 

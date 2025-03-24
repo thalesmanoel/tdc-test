@@ -52,7 +52,8 @@ public class ProposalController {
 	
 	@ExceptionHandler
     public ResponseEntity<String> handleException(Exception e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred: " + e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred: " 
+        	   + e.getMessage());
     }
 	
 }

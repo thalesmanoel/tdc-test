@@ -50,6 +50,11 @@ textarea {
   resize: vertical;
   min-height: 20px;
   max-height: 140px;
+  border: 1px solid var(--border-color);
+}
+
+small{
+  color: red;
 }
 
 .submit, .lista{
