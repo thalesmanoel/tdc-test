@@ -73,4 +73,4 @@ Content-Type: application/json
 
 ## Contato
 Thales Carrion - thalesdesenvolvedor@gmail.com
-Acesse meu (Linkedin)[https://www.linkedin.com/in/thales-carrion/]
+Acesse meu [Linkedin](https://www.linkedin.com/in/thales-carrion/)
