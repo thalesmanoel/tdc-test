@@ -56,7 +56,6 @@ http://localhost:4200/principal
 ### Listar todas as propostas
 ```bash
 GET  http://localhost:8080/proposal/listAll
-POST http://localhost:8080/proposal/save
 ```
 
 ### Salvar uma nova proposta
@@ -72,31 +71,6 @@ Content-Type: application/json
 }
 ```
 
-## Estrutura do Projeto
-```bash
-call-of-papers/
-├── backend/  # Código Spring Boot
-│   ├── src/main/java/...  # Código Java
-│   ├── src/main/resources/application.properties  # Configurações
-│   ├── pom.xml  # Dependências do Maven
-│   └── ...
-│
-├── frontend/  # Código Angular
-│   ├── src/app/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── models/
-│   │   └── app.module.ts
-│   ├── angular.json
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── ...
-│
-└── README.md  # Documentação
-```
-
-## Contribuição
-Caso queira contribuir para o projeto, faça um fork e envie um pull request.
-
 ## Contato
-[Seu Nome] - [Seu Email] - [LinkedIn/GitHub]
+Thales Carrion - thalesdesenvolvedor@gmail.com
+Acesse meu (Linkedin)[https://www.linkedin.com/in/thales-carrion/]
