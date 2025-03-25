@@ -22,7 +22,9 @@ Antes de rodar o projeto, certifique-se de ter instalado:
 ```bash
 # Clone o repositório do projeto
 git clone https://github.com/thalesmanoel/tdc-test
-cd call-of-papers/backend
+
+# Entre na pasta de backend
+cd tdc-test/backend
 
 # Compile e execute o backend
 mvn clean install
@@ -31,27 +33,30 @@ mvn spring-boot:run
 
 ### Frontend (Angular)
 ```bash
-# Instale Node.js e NPM (se ainda não tiver)
-sudo apt install nodejs npm       # Para Linux
-choco install nodejs              # Para Windows
 
-# Instale o Angular CLI
-global npm install -g @angular/cli
-
-# Clone o frontend
-cd ../frontend
-
-# Instale as dependências
-npm install
+# Entre na pasta do frontend
+cd tdc-test/frontend
 
 # Execute o Angular
-ng serve --open
+ng serve 
 ```
+
+## Funcionalidade
+### Acesse o formulário pelo link
+```bash
+http://localhost:4200/principal
+```
+### Exemplo de submissão do formulário
+- **Título**: "A Revolução da Inteligência Artificial"
+- **Resumo**: "Este artigo explora o impacto da inteligência artificial em diversas áreas, incluindo saúde, educação e trabalho. Discutiremos os avanços atuais e o futuro da IA."
+- **Nome do autor**: "João Silva"
+- **E-mail**: "joao.silva@email.com"
 
 ## Endpoints da API
 ### Listar todas as propostas
 ```bash
-GET http://localhost:8080/proposal/listAll
+GET  http://localhost:8080/proposal/listAll
+POST http://localhost:8080/proposal/save
 ```
 
 ### Salvar uma nova proposta
